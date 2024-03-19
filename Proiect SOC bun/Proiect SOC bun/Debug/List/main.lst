@@ -1,0 +1,73 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V7.10.1.1197 for Atmel AVR           12/Jan/2024  09:43:16
+# Copyright 1996-2017 IAR Systems AB.
+# Standalone license - IAR Embedded Workbench for Atmel AVR
+#
+#    Source file  =  C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\main.c
+#    Command line =  
+#        -f C:\Users\justi\AppData\Local\Temp\EWDE2D.tmp
+#        ("C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\main.c" --cpu=m16
+#        -ms -o "C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\Debug\Obj" -lC
+#        "C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\Debug\List" -lA
+#        "C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\Debug\List"
+#        --initializers_in_flash --no_cse --no_inline --no_code_motion
+#        --no_cross_call --no_clustering --no_tbaa --debug
+#        -DENABLE_BIT_DEFINITIONS -e --eeprom_size 512 --clib -On)
+#    Locale       =  English_USA.1252
+#    List file    =  
+#        C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\Debug\List\main.lst
+#    Object file  =  
+#        C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\Debug\Obj\main.r90
+#
+###############################################################################
+
+C:\Users\justi\OneDrive\Desktop\Proiect SOC bun\main.c
+      1          typedef unsigned char byte;
+      2          
+      3          
+      4          extern byte add_func(byte a, byte b);
+      5          extern byte factorial_func(byte n);
+      6          
+
+   \                                 In  segment CODE, align 2, keep-with-next
+      7          void main() {
+   \                     main:
+   \   00000000   938A               ST      -Y, R24
+      8            
+      9            byte result_1 = add_func(5, 3);
+   \   00000002   E013               LDI     R17, 3
+   \   00000004   E005               LDI     R16, 5
+   \   00000006   ........           CALL    add_func
+   \   0000000A   2F80               MOV     R24, R16
+     10            byte result_2 = factorial_func(5);
+   \   0000000C   E005               LDI     R16, 5
+   \   0000000E   ........           CALL    factorial_func
+     11            
+     12            while (1);
+   \                     ??main_0:
+   \   00000012   CFFF               RJMP    ??main_0
+     13          }
+
+   Maximum stack usage in bytes:
+
+   CSTACK RSTACK Function
+   ------ ------ --------
+      1      2   main
+        1      2   -> add_func
+        1      2   -> factorial_func
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  main
+
+ 
+ 20 bytes in segment CODE
+ 
+ 20 bytes of CODE memory
+
+Errors: none
+Warnings: none

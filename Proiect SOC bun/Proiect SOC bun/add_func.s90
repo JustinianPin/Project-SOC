@@ -1,0 +1,10 @@
+        MODULE  add_func
+        PUBLIC  add_func
+        RSEG    CODE:CODE
+
+add_func:
+        ; Parametrii sunt inregistrati in r16 si r17
+        add r16, r17  ; Adun valorile
+        ret            ; Returneaza rezultatul în r16
+        END     add_func
+        ENDMOD add_func
